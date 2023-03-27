@@ -1,0 +1,58 @@
+{
+  "name": "angular-reactive-validation-extended",
+  "version": "9.0.2",
+  "description": "Reactive Forms validation shouldn't require the developer to write lots of HTML to show validation messages. This library makes it easy.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidwalschots/angular-reactive-validation.git"
+  },
+  "author": "David Walschots <davidwalschots.npm@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/davidwalschots/angular-reactive-validation/issues"
+  },
+  "keywords": [
+    "angular",
+    "validation",
+    "reactive-forms"
+  ],
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/forms": "^14.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2015/angular-reactive-validation.mjs",
+  "es2020": "fesm2020/angular-reactive-validation.mjs",
+  "esm2020": "esm2020/angular-reactive-validation.mjs",
+  "fesm2020": "fesm2020/angular-reactive-validation.mjs",
+  "fesm2015": "fesm2015/angular-reactive-validation.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2020": "./esm2020/angular-reactive-validation.mjs",
+      "es2020": "./fesm2020/angular-reactive-validation.mjs",
+      "es2015": "./fesm2015/angular-reactive-validation.mjs",
+      "node": "./fesm2015/angular-reactive-validation.mjs",
+      "default": "./fesm2020/angular-reactive-validation.mjs"
+    }
+  },
+  "homepage": "https://github.com/davidwalschots/angular-reactive-validation#readme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {}
+}

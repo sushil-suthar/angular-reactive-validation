@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ReactiveValidationModule } from 'angular-reactive-validation';
+import { ReactiveValidationModule } from 'npm_publish/angular-reactive-validation/lib/reactive-validation.module';
 
 
 import { AppComponent } from './app.component';

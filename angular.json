@@ -49,9 +49,7 @@
             "outputPath": "dist/test-app",
             "index": "projects/test-app/src/index.html",
             "main": "projects/test-app/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": "projects/test-app/src/polyfills.ts",
             "tsConfig": "projects/test-app/tsconfig.app.json",
             "assets": [
               "projects/test-app/src/favicon.ico",

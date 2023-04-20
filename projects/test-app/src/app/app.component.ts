@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
-import { Validators } from 'angular-reactive-validation';
+import { Validators } from '../../../angular-reactive-validation/src/lib/validators';
 
 @Component({
   selector: 'app-root',

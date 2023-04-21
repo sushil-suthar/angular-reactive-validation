@@ -16,6 +16,10 @@ export class AppComponent {
       firstName: ['', [Validators.required('A first name is required'),
         Validators.minLength(5),
         Validators.maxLength(10, (maxLength => `Maximum length is ${maxLength}`))]],
+        Email: ['', [Validators.required(),
+        Validators.minLength(5),
+        Validators.maxLength(10, (maxLength => `Maximum length is ${maxLength}`))]],
+        Mobile: ['', [Validators.pattern('d', 'not matched')]],
       middleName: ['', [Validators.maxLength(50, (maxLength => `Maximum length is ${maxLength}`))]],
       lastName: ['', [Validators.required('A last name is required'),
         Validators.maxLength(() => 10 * 5, (maxLength => `Maximum length is ${maxLength}`))]]

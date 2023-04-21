@@ -56,6 +56,7 @@ export declare class Validators {
      * Validator that requires controls to have a value greater than or equal to a number.
      */
     static min(min: () => number, messageFunc: ((min: number) => string)): ValidatorFn;
+    static minDefaultMsg(min: number): ValidatorFn;
     /**
      * Validator that requires controls to have a value less than or equal to a number.
      * Note: when using this function without specifying a message, you have to declare an
@@ -84,6 +85,7 @@ export declare class Validators {
      * Validator that requires controls to have a value less than or equal to a number.
      */
     static max(max: () => number, messageFunc: ((max: number) => string)): ValidatorFn;
+    static maxDefaultMsg(max: number): ValidatorFn;
     /**
      * Validator that requires controls to have a value of a minimum length.
      * Note: when using this function without specifying a message, you have to declare an
@@ -112,6 +114,7 @@ export declare class Validators {
      * Validator that requires controls to have a value of a minimum length.
      */
     static minLength(minLength: () => number, messageFunc: ((minLength: number) => string)): ValidatorFn;
+    static minLengthDefaultMsg(minLength: number): ValidatorFn;
     /**
      * Validator that requires controls to have a value of a maximum length.
      * Note: when using this function without specifying a message, you have to declare an
@@ -140,6 +143,7 @@ export declare class Validators {
      * Validator that requires controls to have a value of a maximum length.
      */
     static maxLength(maxLength: () => number, messageFunc: ((maxLength: number) => string)): ValidatorFn;
+    static maxLengthDefaultMsg(maxLength: number): ValidatorFn;
     /**
      * Validator that requires a control to match a regex to its value.
      * Note: when using this function without specifying a message, you have to declare an

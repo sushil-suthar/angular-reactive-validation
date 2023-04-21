@@ -412,25 +412,37 @@ class Validators {
     static min(min, message) {
         return Validators.minValidator(min, message);
     }
+    static minDefaultMsg(min) {
+        return Validators.maxValidator(min, `This field should not be less than ${min}`);
+    }
     static max(max, message) {
         return Validators.maxValidator(max, message);
+    }
+    static maxDefaultMsg(max) {
+        return Validators.maxValidator(max, `This field should not be more than ${max}`);
     }
     static minLength(minLength, message) {
         return Validators.minLengthValidator(minLength, message);
     }
+    static minLengthDefaultMsg(minLength) {
+        return Validators.maxLengthValidator(minLength, `This field should not be less than ${minLength} characters`);
+    }
     static maxLength(maxLength, message) {
         return Validators.maxLengthValidator(maxLength, message);
     }
-    static pattern(pattern, message) {
+    static maxLengthDefaultMsg(maxLength) {
+        return Validators.maxLengthValidator(maxLength, `This field should not be more than ${maxLength} characters`);
+    }
+    static pattern(pattern, message = 'This field should match the pattern ' + pattern) {
         return Validators.patternValidator(pattern, message);
     }
-    static required(message) {
+    static required(message = 'This field is required') {
         return Validators.requiredValidator(message);
     }
-    static requiredTrue(message) {
+    static requiredTrue(message = 'This field is required') {
         return Validators.requiredTrueValidator(message);
     }
-    static email(message) {
+    static email(message = 'Enter valid email') {
         return Validators.emailValidator(message);
     }
 }
@@ -453,4 +465,4 @@ Validators.emailValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validat
  */
 
 export { FormDirective, ReactiveValidationModule, ValidationMessageComponent, ValidationMessagesComponent, ValidatorDeclaration, Validators };
-//# sourceMappingURL=angular-reactive-validation.mjs.map
+//# sourceMappingURL=angular-reactive-validation-extended.mjs.map

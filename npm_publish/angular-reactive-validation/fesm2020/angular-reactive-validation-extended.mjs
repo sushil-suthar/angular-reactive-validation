@@ -14,9 +14,9 @@ class FormDirective {
         this.submitted = formGroupDirective.ngSubmit.asObservable();
     }
 }
-FormDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: FormDirective, deps: [{ token: i1.FormGroupDirective }], target: i0.ɵɵFactoryTarget.Directive });
-FormDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.3.0", type: FormDirective, selector: "form[formGroup]", ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: FormDirective, decorators: [{
+FormDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: FormDirective, deps: [{ token: i1.FormGroupDirective }], target: i0.ɵɵFactoryTarget.Directive });
+FormDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "15.2.9", type: FormDirective, selector: "form[formGroup]", ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: FormDirective, decorators: [{
             type: Directive,
             args: [{
                     // eslint-disable-next-line @angular-eslint/directive-selector
@@ -54,10 +54,6 @@ const getPath = (controlContainer) => controlContainer.path || [];
  * TODO: Trigger revalidation by parent whenever [for] changes.
  */
 class ValidationMessageComponent {
-    constructor(controlContainer) {
-        this.controlContainer = controlContainer;
-        this.initializeForOnInit = () => { };
-    }
     set for(control) {
         if (!isControlContainerVoidOrInitialized(this.controlContainer)) {
             this.initializeForOnInit = () => this.for = control;
@@ -67,6 +63,10 @@ class ValidationMessageComponent {
     }
     get for() {
         return this._for;
+    }
+    constructor(controlContainer) {
+        this.controlContainer = controlContainer;
+        this.initializeForOnInit = () => { };
     }
     ngOnInit() {
         this.initializeForOnInit();
@@ -88,9 +88,9 @@ class ValidationMessageComponent {
         return this._context;
     }
 }
-ValidationMessageComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ValidationMessageComponent, deps: [{ token: i1.ControlContainer, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-ValidationMessageComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.3.0", type: ValidationMessageComponent, selector: "arv-validation-message", inputs: { for: "for", key: "key" }, ngImport: i0, template: "<div *ngIf=\"context\">\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ValidationMessageComponent, decorators: [{
+ValidationMessageComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessageComponent, deps: [{ token: i1.ControlContainer, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+ValidationMessageComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: ValidationMessageComponent, selector: "arv-validation-message", inputs: { for: "for", key: "key" }, ngImport: i0, template: "<div *ngIf=\"context\">\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessageComponent, decorators: [{
             type: Component,
             args: [{ selector: 'arv-validation-message', encapsulation: ViewEncapsulation.None, template: "<div *ngIf=\"context\">\r\n  <ng-content></ng-content>\r\n</div>\r\n" }]
         }], ctorParameters: function () { return [{ type: i1.ControlContainer, decorators: [{
@@ -263,9 +263,9 @@ class ValidationMessagesComponent {
         }
     }
 }
-ValidationMessagesComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ValidationMessagesComponent, deps: [{ token: i1.ControlContainer, optional: true }, { token: FormDirective, optional: true }, { token: REACTIVE_VALIDATION_MODULE_CONFIGURATION_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-ValidationMessagesComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.3.0", type: ValidationMessagesComponent, selector: "arv-validation-messages", inputs: { for: "for" }, queries: [{ propertyName: "messageComponents", predicate: ValidationMessageComponent }], ngImport: i0, template: "<div *ngIf=\"!isValid()\">\r\n  <div class=\"invalid-feedback\">\r\n    <p *ngFor=\"let message of getErrorMessages()\">{{message}}</p>\r\n  </div>\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ValidationMessagesComponent, decorators: [{
+ValidationMessagesComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessagesComponent, deps: [{ token: i1.ControlContainer, optional: true }, { token: FormDirective, optional: true }, { token: REACTIVE_VALIDATION_MODULE_CONFIGURATION_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+ValidationMessagesComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: ValidationMessagesComponent, selector: "arv-validation-messages", inputs: { for: "for" }, queries: [{ propertyName: "messageComponents", predicate: ValidationMessageComponent }], ngImport: i0, template: "<div *ngIf=\"!isValid()\">\r\n  <div class=\"invalid-feedback\">\r\n    <p *ngFor=\"let message of getErrorMessages()\">{{message}}</p>\r\n  </div>\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessagesComponent, decorators: [{
             type: Component,
             args: [{ selector: 'arv-validation-messages', encapsulation: ViewEncapsulation.None, template: "<div *ngIf=\"!isValid()\">\r\n  <div class=\"invalid-feedback\">\r\n    <p *ngFor=\"let message of getErrorMessages()\">{{message}}</p>\r\n  </div>\r\n  <ng-content></ng-content>\r\n</div>\r\n" }]
         }], ctorParameters: function () { return [{ type: i1.ControlContainer, decorators: [{
@@ -294,14 +294,14 @@ class ReactiveValidationModule {
         };
     }
 }
-ReactiveValidationModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ReactiveValidationModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-ReactiveValidationModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "14.3.0", ngImport: i0, type: ReactiveValidationModule, declarations: [ValidationMessagesComponent,
+ReactiveValidationModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+ReactiveValidationModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, declarations: [ValidationMessagesComponent,
         ValidationMessageComponent,
         FormDirective], imports: [CommonModule], exports: [ValidationMessagesComponent,
         ValidationMessageComponent,
         FormDirective] });
-ReactiveValidationModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ReactiveValidationModule, imports: [CommonModule] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.3.0", ngImport: i0, type: ReactiveValidationModule, decorators: [{
+ReactiveValidationModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, imports: [CommonModule] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [

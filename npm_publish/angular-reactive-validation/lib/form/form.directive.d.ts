@@ -8,5 +8,5 @@ export declare class FormDirective {
     submitted: Observable<any>;
     constructor(formGroupDirective: FormGroupDirective);
     static ɵfac: i0.ɵɵFactoryDeclaration<FormDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<FormDirective, "form[formGroup]", never, {}, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<FormDirective, "form[formGroup]", never, {}, {}, never, never, false, never>;
 }

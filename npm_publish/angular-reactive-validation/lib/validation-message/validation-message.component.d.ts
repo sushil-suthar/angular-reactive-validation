@@ -24,5 +24,5 @@ export declare class ValidationMessageComponent implements OnInit {
      */
     get context(): any;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValidationMessageComponent, [{ optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValidationMessageComponent, "arv-validation-message", never, { "for": { "alias": "for"; "required": false; }; "key": { "alias": "key"; "required": false; }; }, {}, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValidationMessageComponent, "arv-validation-message", never, { "for": "for"; "key": "key"; }, {}, never, ["*"], false, never>;
 }

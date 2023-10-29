@@ -28,5 +28,5 @@ export declare class ValidationMessagesComponent implements AfterContentInit, On
     private validateChildren;
     private handleControlStatusChange;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValidationMessagesComponent, [{ optional: true; }, { optional: true; }, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ValidationMessagesComponent, "arv-validation-messages", never, { "for": { "alias": "for"; "required": false; }; }, {}, ["messageComponents"], ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ValidationMessagesComponent, "arv-validation-messages", never, { "for": "for"; }, {}, ["messageComponents"], ["*"], false, never>;
 }

@@ -13,10 +13,10 @@ class FormDirective {
     constructor(formGroupDirective) {
         this.submitted = formGroupDirective.ngSubmit.asObservable();
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: FormDirective, deps: [{ token: i1.FormGroupDirective }], target: i0.ɵɵFactoryTarget.Directive }); }
-    static { this.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "16.2.11", type: FormDirective, selector: "form[formGroup]", ngImport: i0 }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: FormDirective, decorators: [{
+FormDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: FormDirective, deps: [{ token: i1.FormGroupDirective }], target: i0.ɵɵFactoryTarget.Directive });
+FormDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "15.2.9", type: FormDirective, selector: "form[formGroup]", ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: FormDirective, decorators: [{
             type: Directive,
             args: [{
                     // eslint-disable-next-line @angular-eslint/directive-selector
@@ -87,17 +87,19 @@ class ValidationMessageComponent {
     get context() {
         return this._context;
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ValidationMessageComponent, deps: [{ token: i1.ControlContainer, optional: true }], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.2.11", type: ValidationMessageComponent, selector: "arv-validation-message", inputs: { for: "for", key: "key" }, ngImport: i0, template: "<div *ngIf=\"context\">\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ValidationMessageComponent, decorators: [{
+ValidationMessageComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessageComponent, deps: [{ token: i1.ControlContainer, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+ValidationMessageComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: ValidationMessageComponent, selector: "arv-validation-message", inputs: { for: "for", key: "key" }, ngImport: i0, template: "<div *ngIf=\"context\">\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessageComponent, decorators: [{
             type: Component,
             args: [{ selector: 'arv-validation-message', encapsulation: ViewEncapsulation.None, template: "<div *ngIf=\"context\">\r\n  <ng-content></ng-content>\r\n</div>\r\n" }]
-        }], ctorParameters: function () { return [{ type: i1.ControlContainer, decorators: [{
-                    type: Optional
-                }] }]; }, propDecorators: { for: [{
+        }], ctorParameters: function () {
+        return [{ type: i1.ControlContainer, decorators: [{
+                        type: Optional
+                    }] }];
+    }, propDecorators: { for: [{
                 type: Input
-            }], 
+            }],
         /**
          * The name of the returned validation object property for which the custom validation message should be shown.
          */
@@ -180,7 +182,8 @@ class ValidationMessagesComponent {
         this.initializeForOnInit();
     }
     ngAfterContentInit() {
-        this.messageComponentsChangesSubscription.add(this.messageComponents?.changes.subscribe(this.validateChildren));
+        var _a;
+        this.messageComponentsChangesSubscription.add((_a = this.messageComponents) === null || _a === void 0 ? void 0 : _a.changes.subscribe(this.validateChildren));
         this.validateChildren();
         this._for.forEach(control => {
             this.handleControlStatusChange(control);
@@ -262,22 +265,24 @@ class ValidationMessagesComponent {
                 `error of '${getControlPath(error.control)}'`);
         }
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ValidationMessagesComponent, deps: [{ token: i1.ControlContainer, optional: true }, { token: FormDirective, optional: true }, { token: REACTIVE_VALIDATION_MODULE_CONFIGURATION_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.2.11", type: ValidationMessagesComponent, selector: "arv-validation-messages", inputs: { for: "for" }, queries: [{ propertyName: "messageComponents", predicate: ValidationMessageComponent }], ngImport: i0, template: "<div *ngIf=\"!isValid()\">\r\n  <div class=\"invalid-feedback\">\r\n    <p *ngFor=\"let message of getErrorMessages()\">{{message}}</p>\r\n  </div>\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ValidationMessagesComponent, decorators: [{
+ValidationMessagesComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessagesComponent, deps: [{ token: i1.ControlContainer, optional: true }, { token: FormDirective, optional: true }, { token: REACTIVE_VALIDATION_MODULE_CONFIGURATION_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+ValidationMessagesComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: ValidationMessagesComponent, selector: "arv-validation-messages", inputs: { for: "for" }, queries: [{ propertyName: "messageComponents", predicate: ValidationMessageComponent }], ngImport: i0, template: "<div *ngIf=\"!isValid()\">\r\n  <div class=\"invalid-feedback\">\r\n    <p *ngFor=\"let message of getErrorMessages()\">{{message}}</p>\r\n  </div>\r\n  <ng-content></ng-content>\r\n</div>\r\n", dependencies: [{ kind: "directive", type: i3.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i3.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }], encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ValidationMessagesComponent, decorators: [{
             type: Component,
             args: [{ selector: 'arv-validation-messages', encapsulation: ViewEncapsulation.None, template: "<div *ngIf=\"!isValid()\">\r\n  <div class=\"invalid-feedback\">\r\n    <p *ngFor=\"let message of getErrorMessages()\">{{message}}</p>\r\n  </div>\r\n  <ng-content></ng-content>\r\n</div>\r\n" }]
-        }], ctorParameters: function () { return [{ type: i1.ControlContainer, decorators: [{
-                    type: Optional
-                }] }, { type: FormDirective, decorators: [{
-                    type: Optional
-                }] }, { type: undefined, decorators: [{
-                    type: Optional
-                }, {
-                    type: Inject,
-                    args: [REACTIVE_VALIDATION_MODULE_CONFIGURATION_TOKEN]
-                }] }]; }, propDecorators: { messageComponents: [{
+        }], ctorParameters: function () {
+        return [{ type: i1.ControlContainer, decorators: [{
+                        type: Optional
+                    }] }, { type: FormDirective, decorators: [{
+                        type: Optional
+                    }] }, { type: undefined, decorators: [{
+                        type: Optional
+                    }, {
+                        type: Inject,
+                        args: [REACTIVE_VALIDATION_MODULE_CONFIGURATION_TOKEN]
+                    }] }];
+    }, propDecorators: { messageComponents: [{
                 type: ContentChildren,
                 args: [ValidationMessageComponent]
             }], for: [{
@@ -293,15 +298,15 @@ class ReactiveValidationModule {
                 }]
         };
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ReactiveValidationModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
-    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "16.2.11", ngImport: i0, type: ReactiveValidationModule, declarations: [ValidationMessagesComponent,
-            ValidationMessageComponent,
-            FormDirective], imports: [CommonModule], exports: [ValidationMessagesComponent,
-            ValidationMessageComponent,
-            FormDirective] }); }
-    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ReactiveValidationModule, imports: [CommonModule] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.11", ngImport: i0, type: ReactiveValidationModule, decorators: [{
+ReactiveValidationModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+ReactiveValidationModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, declarations: [ValidationMessagesComponent,
+        ValidationMessageComponent,
+        FormDirective], imports: [CommonModule], exports: [ValidationMessagesComponent,
+        ValidationMessageComponent,
+        FormDirective] });
+ReactiveValidationModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, imports: [CommonModule] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ReactiveValidationModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [
@@ -406,19 +411,6 @@ class ValidatorDeclaration {
  * Code comments have been copied from the Angular source code.
  */
 class Validators {
-    /**
-     * No-op validator.
-     */
-    static { this.nullValidator = Validators$1.nullValidator; }
-    static { this.composeAsync = Validators$1.composeAsync; }
-    static { this.minValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.min, 'min'); }
-    static { this.maxValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.max, 'max'); }
-    static { this.minLengthValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.minLength, 'minlength'); }
-    static { this.maxLengthValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.maxLength, 'maxlength'); }
-    static { this.patternValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.pattern, 'pattern'); }
-    static { this.requiredValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validators$1.required, 'required'); }
-    static { this.requiredTrueValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validators$1.requiredTrue, 'required'); }
-    static { this.emailValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validators$1.email, 'email'); }
     static compose(validators) {
         return validators === null ? Validators$1.compose(validators) : Validators$1.compose(validators);
     }
@@ -459,6 +451,19 @@ class Validators {
         return Validators.emailValidator(message);
     }
 }
+/**
+ * No-op validator.
+ */
+Validators.nullValidator = Validators$1.nullValidator;
+Validators.composeAsync = Validators$1.composeAsync;
+Validators.minValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.min, 'min');
+Validators.maxValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.max, 'max');
+Validators.minLengthValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.minLength, 'minlength');
+Validators.maxLengthValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.maxLength, 'maxlength');
+Validators.patternValidator = ValidatorDeclaration.wrapSingleArgumentValidator(Validators$1.pattern, 'pattern');
+Validators.requiredValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validators$1.required, 'required');
+Validators.requiredTrueValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validators$1.requiredTrue, 'required');
+Validators.emailValidator = ValidatorDeclaration.wrapNoArgumentValidator(Validators$1.email, 'email');
 
 /**
  * Generated bundle index. Do not edit.

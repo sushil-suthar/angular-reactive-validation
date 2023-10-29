@@ -28,11 +28,7 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "module": "fesm2015/angular-reactive-validation-extended.mjs",
-  "es2020": "fesm2020/angular-reactive-validation-extended.mjs",
-  "esm2020": "esm2020/angular-reactive-validation-extended.mjs",
-  "fesm2020": "fesm2020/angular-reactive-validation-extended.mjs",
-  "fesm2015": "fesm2015/angular-reactive-validation-extended.mjs",
+  "module": "fesm2022/angular-reactive-validation-extended.mjs",
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
@@ -40,11 +36,9 @@
     },
     ".": {
       "types": "./index.d.ts",
-      "esm2020": "./esm2020/angular-reactive-validation-extended.mjs",
-      "es2020": "./fesm2020/angular-reactive-validation-extended.mjs",
-      "es2015": "./fesm2015/angular-reactive-validation-extended.mjs",
-      "node": "./fesm2015/angular-reactive-validation-extended.mjs",
-      "default": "./fesm2020/angular-reactive-validation-extended.mjs"
+      "esm2022": "./esm2022/angular-reactive-validation-extended.mjs",
+      "esm": "./esm2022/angular-reactive-validation-extended.mjs",
+      "default": "./fesm2022/angular-reactive-validation-extended.mjs"
     }
   }
 }
